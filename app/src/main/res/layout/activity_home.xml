@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/profile"
+            app:riv_oval="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trần Kim Vũ"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="#6C6C6C"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2050531200360"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textColor="@color/secondary_text"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background_home"
+        android:padding="@dimen/_20sdp">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="cardProfile, cardMessages, cardSetting, cardLogout"
+            app:flow_horizontalGap="@dimen/_8sdp"
+            app:flow_maxElementsWrap="1"
+            app:flow_verticalGap="@dimen/_8sdp"
+            app:flow_wrapMode="aligned"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="31dp" />
+
+        <!--    Card Followers-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dashboard_item_1"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Profile"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/user"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/text_or_icon"
+                    android:textColor="@color/text_or_icon"/>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--    Card Following-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMessages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dashboard_item_2"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Messages"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/email"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/text_or_icon"
+                    android:textColor="@color/text_or_icon"/>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--    Card Wallet-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLogout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dashboard_item_5"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Log out"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/logout"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/text_or_icon"
+                    android:textColor="@color/text_or_icon"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSetting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dashboard_item_4"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Setting"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/settings"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/text_or_icon"
+                    android:textColor="@color/text_or_icon"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

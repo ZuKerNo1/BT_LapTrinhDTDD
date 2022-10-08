@@ -1,4 +1,4 @@
-package com.example.listitem;
+package com.example.profileui;
 
 import org.junit.Test;
 
