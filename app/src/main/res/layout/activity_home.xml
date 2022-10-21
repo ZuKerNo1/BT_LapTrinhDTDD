@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,42 +9,46 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_120sdp"
+        android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.makeramen.roundedimageview.RoundedImageView
             android:id="@+id/imageProfile"
             android:layout_width="@dimen/_70sdp"
             android:layout_height="@dimen/_70sdp"
-            android:layout_marginLeft="@dimen/_20sdp"
             android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
             android:src="@drawable/profile"
             app:riv_oval="true" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/_20sdp">
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trần Kim Vũ"
-                android:textSize="@dimen/_13ssp"
                 android:textColor="#6C6C6C"
+                android:textSize="@dimen/_13ssp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2050531200360"
-                android:textSize="@dimen/_12ssp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:text="2050531200360"
                 android:textColor="@color/secondary_text"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -52,17 +56,21 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:background="@drawable/background_home"
-        android:padding="@dimen/_20sdp">
+        android:orientation="vertical"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/flow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="cardProfile, cardMessages, cardSetting, cardLogout"
+            app:constraint_referenced_ids="cardProfile, cardMessages,cardFavo, cardSetting, cardLogout"
             app:flow_horizontalGap="@dimen/_8sdp"
             app:flow_maxElementsWrap="1"
             app:flow_verticalGap="@dimen/_8sdp"
@@ -89,13 +97,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Profile"
-                    android:textSize="@dimen/_13ssp"
-                    android:textStyle="bold"
                     android:drawableLeft="@drawable/user"
                     android:drawablePadding="@dimen/_8sdp"
                     android:drawableTint="@color/text_or_icon"
-                    android:textColor="@color/text_or_icon"/>
+                    android:text="Profile"
+                    android:textColor="@color/text_or_icon"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -120,13 +128,43 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Messages"
-                    android:textSize="@dimen/_13ssp"
-                    android:textStyle="bold"
                     android:drawableLeft="@drawable/email"
                     android:drawablePadding="@dimen/_8sdp"
                     android:drawableTint="@color/text_or_icon"
-                    android:textColor="@color/text_or_icon"/>
+                    android:text="Messages"
+                    android:textColor="@color/text_or_icon"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFavo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/dashboard_item_3"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_16sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/heart"
+                    android:drawablePadding="@dimen/_8sdp"
+                    android:drawableTint="@color/text_or_icon"
+                    android:text="Favorites"
+                    android:textColor="@color/text_or_icon"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -151,13 +189,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Log out"
-                    android:textSize="@dimen/_13ssp"
-                    android:textStyle="bold"
                     android:drawableLeft="@drawable/logout"
                     android:drawablePadding="@dimen/_8sdp"
                     android:drawableTint="@color/text_or_icon"
-                    android:textColor="@color/text_or_icon"/>
+                    android:text="Log out"
+                    android:textColor="@color/text_or_icon"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -180,13 +218,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Setting"
-                    android:textSize="@dimen/_13ssp"
-                    android:textStyle="bold"
                     android:drawableLeft="@drawable/settings"
                     android:drawablePadding="@dimen/_8sdp"
                     android:drawableTint="@color/text_or_icon"
-                    android:textColor="@color/text_or_icon"/>
+                    android:text="Setting"
+                    android:textColor="@color/text_or_icon"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -194,6 +232,16 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu"/>
 
 
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

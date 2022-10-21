@@ -8,6 +8,7 @@
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/background_home.xml" value="0.23" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/background_wave.xml" value="0.2" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/border_button.xml" value="0.192" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/chat_text.xml" value="0.176" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/ic_add.xml" value="0.192" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/ic_back.xml" value="0.124" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
@@ -15,6 +16,9 @@
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/line.xml" value="0.192" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/round_border.xml" value="0.192" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/drawable/round_mess.xml" value="0.1285" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_chatting.xml" value="0.25416666666666665" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_favorite.xml" value="0.25416666666666665" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_favorite_item.xml" value="0.25416666666666665" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_favorites.xml" value="0.25416666666666665" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_favorites_detail.xml" value="0.24010416666666667" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_favorites_item.xml" value="0.24010416666666667" />
@@ -22,9 +26,11 @@
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_mess_item.xml" value="0.25416666666666665" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/activity_messenger.xml" value="0.25416666666666665" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/profile.xml" value="0.25416666666666665" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/sign_in.xml" value="0.264" />
         <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/layout/sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/UTE/122/LapTrinhTrenDTDD/ProfileUI/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

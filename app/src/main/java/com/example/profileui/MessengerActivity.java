@@ -1,19 +1,27 @@
 package com.example.profileui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
-public class MessengerActivity extends AppCompatActivity {
+import de.hdodenhof.circleimageview.CircleImageView;
 
+public class MessengerActivity extends AppCompatActivity {
+    public static final String message1 = "com.example.myfirstapp.MESSAGE";
     ArrayList<Messenger> listMess= new ArrayList<>();
     MessAdapter messListViewAdapter;
     ListView listViewMess;
@@ -22,6 +30,30 @@ public class MessengerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messenger);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setSelectedItemId(R.id.mess);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.mess:
+
+                        return true;
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.favorite:
+                        startActivity(new Intent(getApplicationContext(),FavoriteActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
 //        Trở lại Home
         AppCompatImageView back = (AppCompatImageView) findViewById(R.id.imageBack);
@@ -40,6 +72,22 @@ public class MessengerActivity extends AppCompatActivity {
 
         messListViewAdapter = new MessAdapter(listMess);
         listViewMess = findViewById(R.id.listMess);
-        listViewMess.setAdapter((ListAdapter) messListViewAdapter);
+        listViewMess.setAdapter(messListViewAdapter);
+
+        listViewMess.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String name = listMess.get(i).getName();
+                String context = listMess.get(i).getContent();
+                int ava = listMess.get(i).getAvatar();
+                Intent intent = new Intent(MessengerActivity.this, ChattingActivity.class);
+                intent.putExtra("ten", name);
+                intent.putExtra("noidung", context);
+                intent.putExtra("anhdaidien", ava);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }

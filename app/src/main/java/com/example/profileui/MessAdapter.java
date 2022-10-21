@@ -11,6 +11,8 @@ import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MessAdapter extends BaseAdapter {
     final ArrayList<Messenger> listMess;
 
@@ -42,7 +44,7 @@ public class MessAdapter extends BaseAdapter {
         } else viewMess = view;
 
         Messenger mess = (Messenger) getItem(position);
-        ((RoundedImageView) viewMess.findViewById(R.id.avatar)).setBackgroundResource(Integer.parseInt(String.format("%d", mess.avatar)));
+        ((CircleImageView) viewMess.findViewById(R.id.avatar)).setImageResource(Integer.parseInt(String.format("%d", mess.avatar)));
         ((TextView) viewMess.findViewById(R.id.name)).setText(String.format("%s", mess.name));
         ((TextView) viewMess.findViewById(R.id.content)).setText(String.format("%s ", mess.content));
         ((TextView) viewMess.findViewById(R.id.time)).setText(String.format("%s", mess.time));

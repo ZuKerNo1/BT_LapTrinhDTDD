@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:padding="@dimen/_12sdp"
     tools:context=".ProfileActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -14,6 +13,7 @@
         android:layout_height="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_4sdp"
         android:src="@drawable/ic_back"
+        android:layout_marginLeft="@dimen/_12sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:tint="@color/text_or_icon"/>
@@ -23,7 +23,8 @@
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        android:src="@drawable/ic_search"
+        android:src="@drawable/settings"
+        android:layout_marginRight="@dimen/_12sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:tint="@color/text_or_icon"/>
@@ -84,38 +85,18 @@
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_4sdp"
+        android:backgroundTint="@color/dashboard_item_1"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_round_add_24"
-        android:backgroundTint="@color/dashboard_item_1"
+        android:tint="@color/text_or_icon"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:tint="@color/text_or_icon"/>
+        app:layout_constraintStart_toStartOf="@+id/imageBack" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageAccount"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginLeft="@dimen/_24sdp"
-        android:src="@drawable/ic_dashboard"
-        app:layout_constraintBottom_toBottomOf="@id/fabAdd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/fabAdd"
-        android:tint="@color/text_or_icon"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageSettings"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_24sdp"
-        android:src="@drawable/ic_data"
-        app:layout_constraintBottom_toBottomOf="@id/fabAdd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/fabAdd"
-        android:tint="@color/text_or_icon"/>
+
+
 
     <androidx.constraintlayout.helper.widget.Flow
         android:layout_width="match_parent"
@@ -296,6 +277,16 @@
                 android:textSize="@dimen/_13ssp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
